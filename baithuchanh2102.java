@@ -1,23 +1,21 @@
 import java.util.Scanner;
 
-public class bai2 {
+public class App {
+    private static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("nhap vao so nguyen: ");
-        System.out.print("nhap vao so tu ban phim: ");
-        String c = sc.next();
-        char s[] = c.toCharArray();
-        int t = 0;
-        for (int i = 0; i < s.length; i++) {
-            System.out.print(s[i]);
-            t = t + Character.getNumericValue(s[i]);
-        }
-        System.out.print("Nhap vao nam sinh: ");
-        int ns = sc.nextInt();
-        int tuoi = 2023 - ns;
-        switch (tuoi) {
-            case 10:
-                System.out.print("hoc tieu hoc");
-        }
+        System.out.print("Nhap so nguyen duong n = ");
+        int n = sc.nextInt();
+        System.out.printf("Tong cua cac chu so "
+                + "cua %d la: %d", n, tongcacchuso(n));
+    }
+
+    public static int tongcacchuso(int n) {
+        int tong = 0;
+        do {
+            tong = tong + n % 10;
+            n = n / 10;
+        } while (n > 0);
+        return tong;
     }
 }

@@ -1,4 +1,4 @@
-package HinhHoc;
+package Shapes;
 
 import java.util.Scanner;
 
